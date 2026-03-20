@@ -69,3 +69,45 @@ button.spin:hover { background-color: #2c3e50; transform: scale(1.05); }
 
 .hidden { display: none; }
 #result-area { margin-top: 20px; }
+span {
+    width: 50%; /* চাকার অর্ধেক চওড়া */
+    height: 50%; /* চাকার অর্ধেক লম্বা */
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: 0% 100%; /* কেন্দ্রবিন্দু থেকে ঘোরানো */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-top: 20px; /* লেখাটিকে চাকার কিনারে নেওয়ার জন্য */
+    box-sizing: border-box;
+}
+
+/* প্রতিটি স্প্যানকে আলাদা কোণে ঘোরানো যাতে তারা তাদের স্লাইসে বসে */
+.box1 .span1 { background: #e74c3c; transform: rotate(0deg) skewY(-45deg); }
+.box1 .span2 { background: #2ecc71; transform: rotate(45deg) skewY(-45deg); }
+.box1 .span3 { background: #e74c3c; transform: rotate(90deg) skewY(-45deg); }
+.box1 .span4 { background: #2ecc71; transform: rotate(135deg) skewY(-45deg); }
+
+.box2 .span1 { background: #e74c3c; transform: rotate(180deg) skewY(-45deg); }
+.box2 .span2 { background: #2ecc71; transform: rotate(225deg) skewY(-45deg); }
+.box2 .span3 { background: #e74c3c; transform: rotate(270deg) skewY(-45deg); }
+.box2 .span4 { background: #2ecc71; transform: rotate(315deg) skewY(-45deg); }
+
+/* লেখার টেক্সট যাতে বেঁকে না যায় সেজন্য আলাদা স্টাইল */
+span b {
+    transform: skewY(45deg) rotate(22deg);
+    display: block;
+}
+.pointer {
+    font-size: 40px;
+    color: #34495e;
+    position: absolute;
+    top: 65px; /* চাকার পজিশন অনুযায়ী এডজাস্ট করো */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
