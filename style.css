@@ -13,6 +13,7 @@ body {
     position: relative;
 }
 
+/* চাকার মূল বডি */
 .box {
     width: 300px;
     height: 300px;
@@ -20,8 +21,9 @@ body {
     border-radius: 50%;
     border: 8px solid #fff;
     overflow: hidden;
-    transition: all 5s ease-out; /* ঘোরার সময় ৫ সেকেন্ড */
+    transition: all 5s ease-out;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background: #fff; /* সাদা ব্যাকগ্রাউন্ড যাতে স্লাইস না থাকলে বোঝা যায় */
 }
 
 .box1, .box2 {
@@ -30,63 +32,32 @@ body {
     position: absolute;
 }
 
+/* স্লাইসের ভেতরকার লেখার স্টাইল */
 span {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    transform-origin: center;
-}
-
-/* চাকার প্রতিটি ভাগকে আলাদা রঙ এবং পজিশনে নেওয়া */
-.box1 .span1 { background: #e74c3c; transform: rotate(0deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box1 .span2 { background: #2ecc71; transform: rotate(45deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box1 .span3 { background: #e74c3c; transform: rotate(90deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box1 .span4 { background: #2ecc71; transform: rotate(135deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-
-.box2 .span1 { background: #e74c3c; transform: rotate(180deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box2 .span2 { background: #2ecc71; transform: rotate(225deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box2 .span3 { background: #e74c3c; transform: rotate(270deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-.box2 .span4 { background: #2ecc71; transform: rotate(315deg); clip-path: polygon(50% 50%, 100% 0, 100% 50%); }
-
-button.spin {
-    padding: 15px 30px;
-    margin-top: 20px;
-    background-color: #34495e;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-button.spin:hover { background-color: #2c3e50; transform: scale(1.05); }
-
-.hidden { display: none; }
-#result-area { margin-top: 20px; }
-span {
-    width: 50%; /* চাকার অর্ধেক চওড়া */
-    height: 50%; /* চাকার অর্ধেক লম্বা */
+    width: 50%;
+    height: 50%;
     position: absolute;
     top: 0;
     right: 0;
-    transform-origin: 0% 100%; /* কেন্দ্রবিন্দু থেকে ঘোরানো */
+    transform-origin: 0% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
-    padding-top: 20px; /* লেখাটিকে চাকার কিনারে নেওয়ার জন্য */
-    box-sizing: border-box;
 }
 
-/* প্রতিটি স্প্যানকে আলাদা কোণে ঘোরানো যাতে তারা তাদের স্লাইসে বসে */
+/* লেখাগুলোকে সোজা রাখার জন্য */
+span b {
+    transform: rotate(22deg);
+    display: block;
+    width: 80px;
+    text-align: center;
+    margin-bottom: 50px; /* লেখাটিকে চাকার কিনারার দিকে ঠেলে দেবে */
+}
+
+/* রঙিন স্লাইসগুলো (একদম সঠিক মাপ) */
 .box1 .span1 { background: #e74c3c; transform: rotate(0deg) skewY(-45deg); }
 .box1 .span2 { background: #2ecc71; transform: rotate(45deg) skewY(-45deg); }
 .box1 .span3 { background: #e74c3c; transform: rotate(90deg) skewY(-45deg); }
@@ -97,17 +68,25 @@ span {
 .box2 .span3 { background: #e74c3c; transform: rotate(270deg) skewY(-45deg); }
 .box2 .span4 { background: #2ecc71; transform: rotate(315deg) skewY(-45deg); }
 
-/* লেখার টেক্সট যাতে বেঁকে না যায় সেজন্য আলাদা স্টাইল */
-span b {
-    transform: skewY(45deg) rotate(22deg);
-    display: block;
-}
 .pointer {
     font-size: 40px;
     color: #34495e;
     position: absolute;
-    top: 65px; /* চাকার পজিশন অনুযায়ী এডজাস্ট করো */
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
 }
+
+button.spin {
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hidden { display: none; }
