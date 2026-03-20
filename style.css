@@ -13,80 +13,75 @@ body {
     position: relative;
 }
 
-/* চাকার মূল বডি */
+/* চাকার মূল ডিজাইন - এবার আমরা কনক-গ্রেডিয়েন্ট ব্যবহার করছি */
 .box {
     width: 300px;
     height: 300px;
     position: relative;
     border-radius: 50%;
-    border: 8px solid #fff;
-    overflow: hidden;
-    transition: all 5s ease-out;
+    border: 10px solid #fff;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    background: #fff; /* সাদা ব্যাকগ্রাউন্ড যাতে স্লাইস না থাকলে বোঝা যায় */
+    transition: all 5s ease-out;
+    background: conic-gradient(
+        #e74c3c 0deg 45deg, 
+        #2ecc71 45deg 90deg, 
+        #e74c3c 90deg 135deg, 
+        #2ecc71 135deg 180deg, 
+        #e74c3c 180deg 225deg, 
+        #2ecc71 225deg 270deg, 
+        #e74c3c 270deg 315deg, 
+        #2ecc71 315deg 360deg
+    );
 }
 
-.box1, .box2 {
+/* লেখার পজিশন ঠিক করার জন্য */
+span {
     width: 100%;
     height: 100%;
     position: absolute;
-}
-
-/* স্লাইসের ভেতরকার লেখার স্টাইল */
-span {
-    width: 50%;
-    height: 50%;
-    position: absolute;
     top: 0;
-    right: 0;
-    transform-origin: 0% 100%;
+    left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 14px;
+    align-items: flex-start;
+    padding-top: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
 
-/* লেখাগুলোকে সোজা রাখার জন্য */
-span b {
-    transform: rotate(22deg);
-    display: block;
-    width: 80px;
-    text-align: center;
-    margin-bottom: 50px; /* লেখাটিকে চাকার কিনারার দিকে ঠেলে দেবে */
-}
-
-/* রঙিন স্লাইসগুলো (একদম সঠিক মাপ) */
-.box1 .span1 { background: #e74c3c; transform: rotate(0deg) skewY(-45deg); }
-.box1 .span2 { background: #2ecc71; transform: rotate(45deg) skewY(-45deg); }
-.box1 .span3 { background: #e74c3c; transform: rotate(90deg) skewY(-45deg); }
-.box1 .span4 { background: #2ecc71; transform: rotate(135deg) skewY(-45deg); }
-
-.box2 .span1 { background: #e74c3c; transform: rotate(180deg) skewY(-45deg); }
-.box2 .span2 { background: #2ecc71; transform: rotate(225deg) skewY(-45deg); }
-.box2 .span3 { background: #e74c3c; transform: rotate(270deg) skewY(-45deg); }
-.box2 .span4 { background: #2ecc71; transform: rotate(315deg) skewY(-45deg); }
+/* প্রতিটা অংককে আলাদা আলাদা স্লাইসে ঘোরানো */
+.span1 { transform: rotate(22deg); }
+.span2 { transform: rotate(67deg); }
+.span3 { transform: rotate(112deg); }
+.span4 { transform: rotate(157deg); }
+.span5 { transform: rotate(202deg); }
+.span6 { transform: rotate(247deg); }
+.span7 { transform: rotate(292deg); }
+.span8 { transform: rotate(337deg); }
 
 .pointer {
     font-size: 40px;
     color: #34495e;
     position: absolute;
-    top: 60px;
+    top: 65px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
 }
 
 button.spin {
-    padding: 12px 25px;
-    margin-top: 20px;
+    padding: 12px 30px;
+    margin-top: 25px;
     background-color: #34495e;
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .hidden { display: none; }
+#result-area { margin-top: 20px; }
