@@ -7,24 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="mainbox">
-        <h1>তোমার ভাগ্য পরীক্ষা করো!</h1>
-        <p>স্পিন করো, যা আসবে তাই তোমার সালামি!</p>
-        
-        <div id="box" class="box">
-            <div class="box1">
-                <span class="span1">১০০০০৳</span>
-                <span class="span2">১ টাকা</span>
-                <span class="span3">৫০০০৳</span>
-                <span class="span4">২ টাকা</span>
-            </div>
-            <div class="box2">
-                <span class="span1">১০০০৳</span>
-                <span class="span2">৫ টাকা</span>
-                <span class="span3">৫০০৳</span>
-                <span class="span4">১০ টাকা</span>
-            </div>
+   <div class="mainbox">
+    <h1>তোমার ভাগ্য পরীক্ষা করো!</h1>
+    <p>স্পিন করো, যা আসবে তাই তোমার সালামি!</p>
+    
+    <div class="pointer">▼</div> <div id="box" class="box">
+        <div class="box1">
+            <span class="span1"><b>১০০০০৳</b></span>
+            <span class="span2"><b>১ টাকা</b></span>
+            <span class="span3"><b>৫০০০৳</b></span>
+            <span class="span4"><b>২ টাকা</b></span>
         </div>
+        <div class="box2">
+            <span class="span1"><b>১০০০৳</b></span>
+            <span class="span2"><b>৫ টাকা</b></span>
+            <span class="span3"><b>৫০০৳</b></span>
+            <span class="span4"><b>১০ টাকা</b></span>
+        </div>
+    </div>
+    
+    <button class="spin" onclick="startSpin()">SPIN</button>
         <button class="spin" onclick="startSpin()">SPIN</button>
         
         <div id="result-area" class="hidden">
